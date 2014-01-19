@@ -1,1 +1,1 @@
-The Heroku application instance can be found from <a href="http://wadror14-beerapp-sm.herokuapp.com/breweries">http://wadror14-beerapp-sm.herokuapp.com/breweries</a>
+The Heroku application instance can be found from http://wadror14-beerapp-sm.herokuapp.com/breweries
