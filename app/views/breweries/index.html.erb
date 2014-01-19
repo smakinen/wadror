@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Year</th>
-      <th></th>
+      <th>Number of Beers</th>
       <th></th>
       <th></th>
     </tr>
@@ -14,9 +14,9 @@
   <tbody>
     <% @breweries.each do |brewery| %>
       <tr>
-        <td><%= brewery.name %></td>
-        <td><%= brewery.year %></td>
-        <td><%= link_to 'Show', brewery %></td>
+        <td><h2><%= link_to "#{brewery.name}", brewery %></h2></td> 
+	<td><i>Established in <%= brewery.year %></i></td>
+	<td align="center"><%= brewery.beers.count %></td>
         <td><%= link_to 'Edit', edit_brewery_path(brewery) %></td>
         <td><%= link_to 'Destroy', brewery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -24,6 +24,9 @@
   </tbody>
 </table>
 
+<p> Number of breweries: <%= @breweries.count %></p>
 <br>
 
 <%= link_to 'New Brewery', new_brewery_path %>
+<p><%= link_to 'List of Beers', beers_path %></p>
+
