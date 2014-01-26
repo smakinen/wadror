@@ -6,14 +6,21 @@
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <i>Established year:</i>
   <%= @brewery.year %>
 </p>
 <p>
+  <ul>
   <% @brewery.beers.each do |beer| %>
-  <%= link_to "#{beer.name}", beer %>
+    <li><%= link_to "#{beer.name}", beer %></li>
   <% end %>
+  </ul>
 </p>
 
-<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
-<%= link_to 'Back', breweries_path %>
+<% if !@brewery.ratings.empty?%>
+    <p><%= "#{@brewery.name} has been rated #{pluralize(@brewery.ratings.count, 'time')} with an average rating of #{@brewery.average_rating}" %></p>
+<%else%>
+    <p><%="#{@brewery.name} does not yet have rated beers"%></p>
+<%end%>
+
+<%= link_to 'Edit', edit_brewery_path(@brewery) %>
