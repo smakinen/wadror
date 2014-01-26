@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/views/ratings/index.html.erb" line="12" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0206936-4e14-4d04-84c7-ace8ab470911" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ratebeer.iml" afterPath="$PROJECT_DIR$/.idea/ratebeer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="b0206936-4e14-4d04-84c7-ace8ab470911" name="Default" comment="" />
     <ignored path="ratebeer.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
