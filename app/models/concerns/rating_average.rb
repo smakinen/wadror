@@ -1,11 +1,6 @@
-class Beer < ActiveRecord::Base
-  include RatingAverage
+module RatingAverage
+  extend ActiveSupport::Concern
 
-  belongs_to :brewery
-  has_many :ratings, dependent: :destroy
-
-  # Before module mixin
-=begin
   def average_rating
     times_rated = ratings.count
 
@@ -16,13 +11,5 @@ class Beer < ActiveRecord::Base
 
     # calc avg if there are ratings, default to 0
     avg_score = (times_rated > 0) ? ratings_sum / times_rated : 0
-
-    # alternative method with AR
-    #ratings.average('score').to_s
-  end
-=end
-
-  def to_s
-    "#{name} #{brewery.name}"
   end
 end
