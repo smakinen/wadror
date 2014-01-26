@@ -15,6 +15,9 @@ class Beer < ActiveRecord::Base
 
     # alternative method with AR
     #ratings.average('score').to_s
+  end
 
+  def to_s
+    "#{name} #{brewery.name}"
   end
 end
