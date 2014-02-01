@@ -17,7 +17,7 @@
 <%unless @user.memberships.empty? %>
     <ul>
       <%@user.memberships.each do |membership| %>
-      <li><%=membership.beer_club.name %></li>
+      <li><%=link_to membership.beer_club.name, membership.beer_club %></li>
       <% end %>
     </ul>
 

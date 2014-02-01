@@ -25,14 +25,22 @@ class MembershipsController < ApplicationController
   # POST /memberships
   # POST /memberships.json
   def create
-    #@membership = Membership.new(membership_params)
+
+    club_to_join = BeerClub.find membership_params[:beer_club_id]
+    already_member = current_user.beer_clubs.include?(club_to_join)
+
     @membership = Membership.new(beer_club_id:membership_params[:beer_club_id], user_id:current_user.id)
 
+    if already_member
+      @membership.errors.add(:beer_club_id, " cannot be joined, you are already a member of the #{club_to_join.name}")
+    end
+
     respond_to do |format|
-      if @membership.save
+      if not already_member and @membership.save
         format.html { redirect_to @membership, notice: 'Membership was successfully created.' }
         format.json { render action: 'show', status: :created, location: @membership }
       else
+        @beer_clubs = BeerClub.all
         format.html { render action: 'new' }
         format.json { render json: @membership.errors, status: :unprocessable_entity }
       end
