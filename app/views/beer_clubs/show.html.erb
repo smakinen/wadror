@@ -15,5 +15,15 @@
   <%= @beer_club.city %>
 </p>
 
+<h2>Club Members</h2>
+
+<div id="club_members">
+  <ul>
+    <% @beer_club.memberships.each do |membership|%>
+        <li><%=membership.user.username %></li>
+    <%end%>
+  </ul>
+</div>
+
 <%= link_to 'Edit', edit_beer_club_path(@beer_club) %> |
 <%= link_to 'Back', beer_clubs_path %>

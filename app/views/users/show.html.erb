@@ -12,7 +12,18 @@
   <% end %>
 </ul>
 
+<p><strong>Beer Club Memberships</strong></p>
 
+<%unless @user.memberships.empty? %>
+    <ul>
+      <%@user.memberships.each do |membership| %>
+      <li><%=membership.beer_club.name %></li>
+      <% end %>
+    </ul>
+
+<%else%>
+    No club memberships
+<%end%>
 
 </p>
 
