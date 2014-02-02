@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
   has_many :beers, through: :ratings
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :beer_clubs, through: :memberships
 
   validates :username, uniqueness: true
@@ -17,7 +17,10 @@ class User < ActiveRecord::Base
 
   def password_must_contain_digit_and_caps
 
-    contains_digit = !password.match("[\d{1,}]+").nil?
+    # for some reason this doesn't work when using (double quotes ""?)
+    #contains_digit = !password.match("[\d{1,}]+").nil?
+
+    contains_digit = !password.match("[0-9]+").nil?
     contains_capital_letter = !password.match("[A-Z]+").nil?
 
     if not contains_digit or not contains_capital_letter
