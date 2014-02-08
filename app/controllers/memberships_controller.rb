@@ -29,7 +29,7 @@ class MembershipsController < ApplicationController
     club_to_join = BeerClub.find membership_params[:beer_club_id]
     already_member = current_user.beer_clubs.include?(club_to_join)
 
-    @membership = Membership.new(beer_club_id:membership_params[:beer_club_id], user_id:current_user.id)
+    @membership = Membership.new(beer_club_id: membership_params[:beer_club_id], user_id: current_user.id)
 
     if already_member
       @membership.errors.add(:beer_club_id, " cannot be joined, you are already a member of the #{club_to_join.name}")
@@ -72,13 +72,13 @@ class MembershipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_membership
-      @membership = Membership.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_membership
+    @membership = Membership.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def membership_params
-      params.require(:membership).permit(:beer_club_id, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def membership_params
+    params.require(:membership).permit(:beer_club_id, :user_id)
+  end
 end

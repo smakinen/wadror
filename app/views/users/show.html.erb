@@ -3,7 +3,7 @@
 <p>
   <strong><%= @user.username %></strong>
 
-  <p><%= "has made #{@user.ratings.count} ratings with an average rating of #{@user.average_rating}" %> </p>
+<p><%= "has made #{@user.ratings.count} ratings with an average rating of #{@user.average_rating}" %> </p>
 
 <p><strong>Ratings</strong></p>
 <ul>
@@ -11,8 +11,8 @@
       <li>
         <%= rating %>
         <% if @user == current_user %>
-          <%= link_to 'delete', rating, method: :delete, data: {confirm:"Are you sure?"} %>
-        <%end%>
+            <%= link_to 'delete', rating, method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
       </li>
 
   <% end %>
@@ -20,22 +20,22 @@
 
 <p><strong>Beer Club Memberships</strong></p>
 
-<%unless @user.memberships.empty? %>
+<% unless @user.memberships.empty? %>
     <ul>
-      <%@user.memberships.each do |membership| %>
-      <li><%=link_to membership.beer_club.name, membership.beer_club %></li>
+      <% @user.memberships.each do |membership| %>
+          <li><%= link_to membership.beer_club.name, membership.beer_club %></li>
       <% end %>
     </ul>
 
-<%else%>
+<% else %>
     No club memberships
-<%end%>
+<% end %>
 
 </p>
 
-<%if @user == current_user %>
-    <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if @user == current_user %>
+    <%= link_to 'Destroy', @user, method: :delete, data: {confirm: 'Are you sure?'} %>
     <%= link_to 'Edit', edit_user_path(@user) %>
-<%end%>
+<% end %>
 
 <%= link_to 'Back', users_path %>

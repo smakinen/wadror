@@ -17,15 +17,28 @@ class User < ActiveRecord::Base
 
   def password_must_contain_digit_and_caps
 
-    # for some reason this doesn't work when using (double quotes ""?)
-    #contains_digit = !password.match("[\d{1,}]+").nil?
-
-    contains_digit = !password.match("[0-9]+").nil? if not password.nil?
-    contains_capital_letter = !password.match("[A-Z]+").nil? if not password.nil?
+    contains_digit = !password.match(/[\d{1,}]+/).nil? if not password.nil?
+    contains_capital_letter = !password.match(/[A-Z]+/).nil? if not password.nil?
 
     if not contains_digit or not contains_capital_letter
       errors.add(:password, "Password must contain a capital letter and a number")
     end
-
   end
+
+  def favorite_beer
+    return nil if ratings.empty?
+    ratings.order(score: :desc).limit(1).first.beer
+  end
+
+  def favorite_style
+    return nil if ratings.empty?
+    ratings.first.beer.style
+
+    # something like this
+    # u.ratings.group(:beer_id).average(:score)[0]
+
+
+    #
+  end
+
 end

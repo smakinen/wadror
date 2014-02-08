@@ -19,9 +19,9 @@
 
 <div id="club_members">
   <ul>
-    <% @beer_club.memberships.each do |membership|%>
-        <li><%=membership.user.username %></li>
-    <%end%>
+    <% @beer_club.memberships.each do |membership| %>
+        <li><%= membership.user.username %></li>
+    <% end %>
   </ul>
 </div>
 

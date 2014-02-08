@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Ratebeer</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -15,20 +15,20 @@
   <%= link_to "Users", users_path %>
   <%= link_to "Beer Clubs", beer_clubs_path %>
 
-  <%= "|"%>
+  <%= "|" %>
 
   <% if current_user.nil? %>
 
       <%= link_to "Sign In", signin_path %>
       <%= link_to "Create New Account", signup_path %>
 
-      <%else%>
+  <% else %>
       <%= link_to current_user.username, user_path(current_user) %>
       <%= link_to "Rate a Beer", new_rating_path %>
       <%= link_to "Join a Club", new_membership_path %>
       <%= link_to "Sign Out", signout_path, method: :delete %>
 
-<%end%>
+  <% end %>
 
 
 </div>

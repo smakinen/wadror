@@ -7,7 +7,7 @@ class Brewery < ActiveRecord::Base
   validates :name, presence: true
   validates :year, numericality: {only_integer: true,
                                   greater_than_or_equal_to: 1042}
-  validate  :established_year_cannot_be_in_the_future
+  validate :established_year_cannot_be_in_the_future
 
   def print_report
     puts name

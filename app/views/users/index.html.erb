@@ -2,19 +2,19 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Username</th>
-      <th></th>
-    </tr>
+  <tr>
+    <th>Username</th>
+    <th></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
       <tr>
         <td><%= user.username %></td>
         <td><%= link_to 'Show', user %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

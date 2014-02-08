@@ -2,25 +2,25 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Founded</th>
-      <th>City</th>
-      <th></th>
-      <th></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Founded</th>
+    <th>City</th>
+    <th></th>
+    <th></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @beer_clubs.each do |beer_club| %>
+  <% @beer_clubs.each do |beer_club| %>
       <tr>
         <td><%= link_to "#{beer_club.name}", beer_club %></td>
         <td><%= beer_club.founded %></td>
         <td><%= beer_club.city %></td>
         <td><%= link_to 'Edit', edit_beer_club_path(beer_club) %></td>
-        <td><%= link_to 'Destroy', beer_club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', beer_club, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

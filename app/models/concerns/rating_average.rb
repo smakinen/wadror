@@ -5,7 +5,7 @@ module RatingAverage
     times_rated = ratings.count
 
     # init sum to float for avg calculation
-    ratings_sum = ratings.inject(0.0) { |sum, rating |
+    ratings_sum = ratings.inject(0.0) { |sum, rating|
       sum + rating.score
     }
 
