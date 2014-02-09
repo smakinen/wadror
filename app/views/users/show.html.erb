@@ -18,6 +18,14 @@
   <% end %>
 </ul>
 
+<p><strong>Favorite Beer Style</strong></p>
+
+<% unless @user.favorite_style.nil? %>
+    <%= "#{@user.favorite_style} tastes and feels the best at the moment"  %>
+<% else %>
+    No preffered beer styles yet
+<%end%>
+
 <p><strong>Beer Club Memberships</strong></p>
 
 <% unless @user.memberships.empty? %>
@@ -31,7 +39,8 @@
     No club memberships
 <% end %>
 
-</p>
+
+
 
 <% if @user == current_user %>
     <%= link_to 'Destroy', @user, method: :delete, data: {confirm: 'Are you sure?'} %>
