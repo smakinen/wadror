@@ -1,3 +1,4 @@
 The Heroku application instance can be found from http://wadror14-beerapp-sm.herokuapp.com/breweries
 
 [![Build Status](https://travis-ci.org/smakinen/wadror.png)](https://travis-ci.org/smakinen/wadror)
+https://codeclimate.com/github/smakinen/wadror
