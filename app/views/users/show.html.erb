@@ -26,6 +26,15 @@
     No preffered beer styles yet
 <%end%>
 
+<p><strong>Favorite Brewery</strong></p>
+
+<% unless @user.favorite_brewery.nil? %>
+    <%= "#{@user.favorite_brewery.name} has the most enjoyable products"  %>
+<% else %>
+    No preffered breweries yet
+<%end%>
+
+
 <p><strong>Beer Club Memberships</strong></p>
 
 <% unless @user.memberships.empty? %>

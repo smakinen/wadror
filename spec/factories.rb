@@ -18,6 +18,21 @@ FactoryGirl.define do
     year 1900
   end
 
+  factory :brewery_reaktor, class: Brewery do
+    name "Reaktor Brewery"
+    year 2010
+  end
+
+  factory :brewery_hartwall, class: Brewery do
+    name "Hartwall"
+    year 1836
+  end
+
+  factory :brewery_brewdog, class:Brewery do
+    name "Brewdog"
+    year 2007
+  end
+
   factory :beer do
     name "anonymous"
     brewery

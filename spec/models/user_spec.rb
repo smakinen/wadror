@@ -97,6 +97,19 @@ describe User do
     beer
   end
 
+  def create_beer_with_brewery_and_rating(brewery, score, user)
+    beer = FactoryGirl.create(:beer, brewery:brewery)
+    FactoryGirl.create(:rating, score:score, beer:beer, user:user)
+    beer
+  end
+
+  def create_beers_with_brewery_and_ratings(brewery, *scores, user)
+    scores.each do |score|
+      beer = FactoryGirl.create(:beer, brewery:brewery)
+      FactoryGirl.create(:rating, score:score, beer:beer, user:user)
+    end
+  end
+
   describe "favorite style" do
     let(:user) {FactoryGirl.create(:user)}
 
@@ -117,8 +130,10 @@ describe User do
     end
 
     it "is the style of which ratings has a highest average if several styles rated" do
-      lager_beer = create_beer_with_rating(10, user)
-      lager_beer = create_beer_with_rating(20, user)
+
+      # standard lager beers
+      create_beer_with_rating(10, user)
+      create_beer_with_rating(20, user)
 
       create_beer_with_style_and_rating("Pale Ale", 28, user)
       create_beer_with_style_and_rating("Pale Ale", 17, user)
@@ -131,6 +146,45 @@ describe User do
     end
   end
 
+  describe "favorite brewery" do
+
+    let(:user) {FactoryGirl.create(:user)}
+
+    let(:brewery_reaktor) {FactoryGirl.create(:brewery_reaktor)}
+    let(:brewery_hartwall) {FactoryGirl.create(:brewery_hartwall)}
+
+    it "has the method for determining the favorite brewery" do
+      user.should respond_to :favorite_brewery
+    end
+
+    it "is the brewery of the beer if only one beer rated" do
+      beer = create_beer_with_rating(10, user)
+      expect(user.favorite_brewery).to eq(beer.brewery)
+    end
+
+    it "is the brewery which has the higher rating if two ratings with different breweries" do
+      create_beer_with_brewery_and_rating(brewery_reaktor, 15, user)
+      higher_rated_beer = create_beer_with_brewery_and_rating(brewery_hartwall, 25, user)
+
+      expect(user.favorite_brewery).to eq(higher_rated_beer.brewery)
+
+    end
+
+    it "is the brewery which has the highest rating if beers of muliple breweries rated" do
+      brewery_brewdog = FactoryGirl.create(:brewery_brewdog)
+
+      create_beers_with_brewery_and_ratings(brewery_brewdog, 10, 15, 27, 5, user)
+      create_beers_with_brewery_and_ratings(brewery_hartwall, 5, 7, 10, 12, user)
+      create_beers_with_brewery_and_ratings(brewery_reaktor, 20, 15, user)
+
+      expected_brewery_product = create_beer_with_brewery_and_rating(brewery_reaktor, 30, user)
+      expect(user.favorite_brewery).to eq(expected_brewery_product.brewery)
+
+    end
+
+
+
+  end
 
 
 end

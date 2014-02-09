@@ -50,11 +50,34 @@ class User < ActiveRecord::Base
 
   end
 
+  def favorite_brewery
+    return nil if ratings.empty?
+
+    # breweries included in the user's ratings
+    user_beer_breweries = rated_breweries
+
+    # get average score for different breweries
+    brewery_score_averages = {}
+
+    user_beer_breweries.each do |brewery_id, ratings_amount| #amount unused here
+      brewery_score_averages[brewery_id] = brewery_average(brewery_id)
+    end
+
+    # find which brewery has the highest average as rated by user
+    highest_rated_brewery = brewery_score_averages.max_by {|brewery_id, score_average| score_average}
+    Brewery.find(highest_rated_brewery.first)
+
+  end
+
   private
 
   # the style names of the beers the user has sampled and rated
   def rated_styles
     beers.group(:style).count.keys
+  end
+
+  def rated_breweries
+    beers.group(:brewery_id).count
   end
 
   # the average score of a given style in the user's ratings
@@ -72,6 +95,21 @@ class User < ActiveRecord::Base
 
     # calc avg for the beers of the style
     style_average = ratings.where(beer_id: style_specific_beer_ids).average(:score)
+  end
+
+  def brewery_average(brewery_id)
+    # find out the which of the user's rated beers belong to the given brewery
+    brewery_specific_beers = beers.where("brewery_id = ?", brewery_id).group(:beer_id)
+
+    # gather the ids of brewery beers in order to find the ratings
+    brewery_specific_beer_ids = []
+
+    brewery_specific_beers.each do |brewery_beer|
+      brewery_specific_beer_ids << brewery_beer.id
+    end
+
+    # calc avg for the beers of the brewery as rated by the user
+    brewery_average = ratings.where(beer_id: brewery_specific_beer_ids).average(:score)
   end
 
 end
