@@ -38,8 +38,17 @@ describe "Beer" do
     expect(page).to have_content("Name can't be blank")
 
     expect(Beer.count).to eq(0)
+  end
 
+  it "has all the necessary classes for simplecov" do
+    # listing for simplecov
+    BeerClub
+    BeerClubsController
+    MembershipsController
+    SessionsController
+    UsersController
 
+    Membership
   end
 
 
