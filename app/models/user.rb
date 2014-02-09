@@ -32,13 +32,46 @@ class User < ActiveRecord::Base
 
   def favorite_style
     return nil if ratings.empty?
-    ratings.first.beer.style
 
-    # something like this
-    # u.ratings.group(:beer_id).average(:score)[0]
+    # find the styles of the beers the user has rated
+    user_beer_styles = rated_styles
 
+    # put the averages for each beer style here
+    style_score_averages = {}
 
-    #
+    # get average for each rated style
+    user_beer_styles.each do |style|
+      style_score_averages[style] = style_average(style)
+    end
+
+    # find which rated style has the highest average
+    highest_rated_style = style_score_averages.max_by {|beer_style, score_average| score_average}
+    highest_rated_style.first #name
+
+  end
+
+  private
+
+  # the style names of the beers the user has sampled and rated
+  def rated_styles
+    beers.group(:style).count.keys
+  end
+
+  # the average score of a given style in the user's ratings
+  def style_average(style)
+
+    # find out the which of the user's rated beers belong to a style
+    style_specific_beers = beers.where("style = ?", style).group(:beer_id)
+
+    # gather the ids of those beers in order to find the ratings
+    style_specific_beer_ids = []
+
+    style_specific_beers.each do |style_beer|
+      style_specific_beer_ids << style_beer.id
+    end
+
+    # calc avg for the beers of the style
+    style_average = ratings.where(beer_id: style_specific_beer_ids).average(:score)
   end
 
 end

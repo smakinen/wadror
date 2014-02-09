@@ -116,6 +116,19 @@ describe User do
       expect(user.favorite_style).to eq(preferred_porter_beer.style)
     end
 
+    it "is the style of which ratings has a highest average if several styles rated" do
+      lager_beer = create_beer_with_rating(10, user)
+      lager_beer = create_beer_with_rating(20, user)
+
+      create_beer_with_style_and_rating("Pale Ale", 28, user)
+      create_beer_with_style_and_rating("Pale Ale", 17, user)
+
+      create_beer_with_style_and_rating("Scotch Ale", 35, user)
+      preferred_beer_sample = create_beer_with_style_and_rating("Scotch Ale", 31, user)
+
+      expect(user.favorite_style).to eq(preferred_beer_sample.style)
+
+    end
   end
 
 
