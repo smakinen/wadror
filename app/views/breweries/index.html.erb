@@ -27,6 +27,6 @@
 <p> Number of breweries: <%= @breweries.count %></p>
 <br>
 
-<%= link_to 'New Brewery', new_brewery_path %>
+<%= link_to 'New Brewery', new_brewery_path if current_user%>
 <p><%= link_to 'List of Beers', beers_path %></p>
 

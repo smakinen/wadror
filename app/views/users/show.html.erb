@@ -45,11 +45,8 @@
     </ul>
 
 <% else %>
-    No club memberships
+    <p>No club memberships</p>
 <% end %>
-
-
-
 
 <% if @user == current_user %>
     <%= link_to 'Destroy', @user, method: :delete, data: {confirm: 'Are you sure?'} %>

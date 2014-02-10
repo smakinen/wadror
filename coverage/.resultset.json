@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/wadror/railsapp/ratebeer/config/environment.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/wadror/railsapp/ratebeer/config/application.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/application.rb": [
         1,
         null,
         1,
@@ -36,13 +36,13 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/config/boot.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/home/wadror/railsapp/ratebeer/config/environments/test.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/environments/test.rb": [
         1,
         null,
         null,
@@ -80,7 +80,7 @@
         1,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/config/initializers/backtrace_silencers.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -89,13 +89,13 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/config/initializers/filter_parameter_logging.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/wadror/railsapp/ratebeer/config/initializers/inflections.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -113,14 +113,14 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/config/initializers/mime_types.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/config/initializers/secret_token.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -134,12 +134,12 @@
         null,
         1
       ],
-      "/home/wadror/railsapp/ratebeer/config/initializers/session_store.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/home/wadror/railsapp/ratebeer/config/initializers/wrap_parameters.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -155,7 +155,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/spec/factories.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/factories.rb": [
         1,
         1,
         1,
@@ -198,7 +198,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/models/rating.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/models/rating.rb": [
         1,
         1,
         1,
@@ -212,7 +212,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/models/brewery.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/models/brewery.rb": [
         1,
         1,
         null,
@@ -250,24 +250,24 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/models/concerns/rating_average.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/models/concerns/rating_average.rb": [
         1,
         1,
         null,
         1,
-        16,
+        19,
         null,
         null,
-        16,
+        19,
         12,
         null,
         null,
         null,
-        16,
+        19,
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/config/routes.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/config/routes.rb": [
         1,
         1,
         null,
@@ -341,50 +341,50 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/wadror/railsapp/ratebeer/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/home/wadror/railsapp/ratebeer/app/helpers/beer_clubs_helper.rb": [
-        1,
-        null
-      ],
-      "/home/wadror/railsapp/ratebeer/app/helpers/beers_helper.rb": [
-        1,
-        null
-      ],
-      "/home/wadror/railsapp/ratebeer/app/helpers/breweries_helper.rb": [
-        1,
-        null
-      ],
-      "/home/wadror/railsapp/ratebeer/app/helpers/memberships_helper.rb": [
-        1,
-        null
-      ],
-      "/home/wadror/railsapp/ratebeer/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/home/wadror/railsapp/ratebeer/spec/support/own_test_helper.rb": [
-        1,
-        null,
-        1,
-        8,
-        null,
-        8,
-        8,
-        8,
         null,
         null,
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/spec/features/breweries_page_spec.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/svmakine/cs courses/wadror/git/wadror/app/helpers/beer_clubs_helper.rb": [
+        1,
+        null
+      ],
+      "/home/svmakine/cs courses/wadror/git/wadror/app/helpers/beers_helper.rb": [
+        1,
+        null
+      ],
+      "/home/svmakine/cs courses/wadror/git/wadror/app/helpers/breweries_helper.rb": [
+        1,
+        null
+      ],
+      "/home/svmakine/cs courses/wadror/git/wadror/app/helpers/memberships_helper.rb": [
+        1,
+        null
+      ],
+      "/home/svmakine/cs courses/wadror/git/wadror/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/support/own_test_helper.rb": [
+        1,
+        null,
+        1,
+        11,
+        null,
+        11,
+        11,
+        11,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/features/breweries_page_spec.rb": [
         1,
         null,
         1,
@@ -427,7 +427,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/spec/features/ratings_spec.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/features/ratings_spec.rb": [
         1,
         1,
         null,
@@ -531,7 +531,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/spec/features/users_spec.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/features/users_spec.rb": [
         1,
         1,
         null,
@@ -577,7 +577,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/spec/models/beer_spec.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/models/beer_spec.rb": [
         1,
         null,
         1,
@@ -605,7 +605,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/models/beer.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/models/beer.rb": [
         1,
         1,
         null,
@@ -639,7 +639,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/spec/models/brewery_spec.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/models/brewery_spec.rb": [
         1,
         null,
         1,
@@ -658,7 +658,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/spec/models/user_spec.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -850,7 +850,7 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/models/user.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/models/user.rb": [
         1,
         1,
         null,
@@ -870,10 +870,10 @@
         null,
         1,
         null,
-        32,
-        32,
+        35,
+        35,
         null,
-        32,
+        35,
         6,
         null,
         null,
@@ -884,7 +884,7 @@
         null,
         null,
         1,
-        23,
+        26,
         null,
         null,
         15,
@@ -904,7 +904,7 @@
         null,
         null,
         1,
-        23,
+        26,
         null,
         null,
         15,
@@ -967,19 +967,19 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/sessions_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
         null,
         null,
         1,
-        8,
-        8,
+        11,
+        11,
         1,
         null,
-        7,
-        7,
+        10,
+        10,
         null,
         null,
         null,
@@ -991,21 +991,35 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/application_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null,
         1,
+        1,
         null,
         1,
-        93,
-        73,
+        128,
+        106,
+        null,
+        null,
+        1,
+        7,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/users_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -1079,7 +1093,7 @@
         1,
         null,
         1,
-        14,
+        17,
         null,
         null,
         null,
@@ -1088,14 +1102,16 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/models/membership.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/models/membership.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/ratings_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/ratings_controller.rb": [
         1,
+        1,
+        null,
         1,
         1,
         null,
@@ -1125,10 +1141,12 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/breweries_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/breweries_controller.rb": [
         1,
         1,
         1,
+        1,
+        null,
         null,
         null,
         1,
@@ -1199,24 +1217,17 @@
         1,
         0,
         null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/models/beer_club.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/models/beer_club.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/beer_clubs_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/beer_clubs_controller.rb": [
+        1,
+        1,
         1,
         1,
         null,
@@ -1292,7 +1303,8 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/memberships_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/memberships_controller.rb": [
+        1,
         1,
         1,
         null,
@@ -1378,7 +1390,9 @@
         null,
         null
       ],
-      "/home/wadror/railsapp/ratebeer/app/controllers/beers_controller.rb": [
+      "/home/svmakine/cs courses/wadror/git/wadror/app/controllers/beers_controller.rb": [
+        1,
+        1,
         1,
         1,
         1,
@@ -1463,6 +1477,6 @@
         null
       ]
     },
-    "timestamp": 1391980920
+    "timestamp": 1392047975
   }
 }

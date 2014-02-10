@@ -1,8 +1,14 @@
 require 'spec_helper'
+include OwnTestHelper
 
 describe "Beer" do
 
   let!(:brewery) {FactoryGirl.create(:brewery_brewdog)}
+
+  before :each do
+    FactoryGirl.create :user
+    sign_in(username:"Pekka", password:"Foobar1")
+  end
 
   it "is added to the system when the name is not blank" do
 

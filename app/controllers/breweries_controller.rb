@@ -1,6 +1,8 @@
 class BreweriesController < ApplicationController
   before_action :set_brewery, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate, only: [:destroy]
+  before_action :ensure_that_signed_in, except: [:index, :show]
+  before_action :ensure_administrator_role, only: [:edit, :destroy]
+
   # GET /breweries
   # GET /breweries.json
   def index
@@ -70,14 +72,5 @@ class BreweriesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def brewery_params
     params.require(:brewery).permit(:name, :year)
-  end
-
-  def authenticate
-    admin_accounts = {"john" => "1234", "mary" => "password", "jane" => "wordpass", "admin" => "secret", "matti" => "ittam"}
-
-    authenticate_or_request_with_http_basic do |username, password|
-      is_admin_user = admin_accounts.has_key?(username)
-      is_admin_user and password == admin_accounts[username]
-    end
   end
 end
