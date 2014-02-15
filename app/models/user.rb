@@ -86,6 +86,9 @@ class User < ActiveRecord::Base
     # find out the which of the user's rated beers belong to a style
     style_specific_beers = beers.where("style = ?", style).group(:beer_id)
 
+    # postgres
+    # style_specific_beers = beers.group(:beer_id).select(:beer_id).where("style = ?", style)
+
     # gather the ids of those beers in order to find the ratings
     style_specific_beer_ids = []
 
