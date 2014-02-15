@@ -14,27 +14,46 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
+<<<<<<< HEAD
       <div class="timestamp">Generated <abbr class="timeago" title="2014-02-15T23:41:21+02:00">2014-02-15T23:41:21+02:00</abbr></div>
+=======
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-02-10T17:59:35+02:00">2014-02-10T17:59:35+02:00</abbr></div>
+>>>>>>> d1ca1dc3135e9e612580868a8af175d8fe1a2823
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
+<<<<<<< HEAD
     (<span class="covered_percent"><span class="yellow">86.15%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
          0.99
-      </span>
+=======
+    (<span class="covered_percent"><span class="yellow">83.07%</span></span>
+     covered at
+     <span class="covered_strength">
+       <span class="green">
+         2.81
+>>>>>>> d1ca1dc3135e9e612580868a8af175d8fe1a2823
+       </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
+<<<<<<< HEAD
     <b>25</b> files in total.
     <b>130</b> relevant lines. 
     <span class="green"><b>112</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed </span>
+=======
+    <b>41</b> files in total.
+    <b>626</b> relevant lines. 
+    <span class="green"><b>520</b> lines covered</span> and
+    <span class="red"><b>106</b> lines missed </span>
+>>>>>>> d1ca1dc3135e9e612580868a8af175d8fe1a2823
   </div>
   <table class="file_list">
     <thead>

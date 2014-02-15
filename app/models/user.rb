@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
   def style_average(style)
 
     # find out the which of the user's rated beers belong to a style
-    style_specific_beers = beers.where("style = ?", style).group(:beer_id)
+    style_specific_beers = beers.select("beers.id").where("style = ?", style).distinct
 
     # postgres
     # style_specific_beers = beers.group(:beer_id).select(:beer_id).where("style = ?", style)
@@ -102,7 +102,7 @@ class User < ActiveRecord::Base
 
   def brewery_average(brewery_id)
     # find out the which of the user's rated beers belong to the given brewery
-    brewery_specific_beers = beers.where("brewery_id = ?", brewery_id).group(:beer_id)
+    brewery_specific_beers = beers.select("beers.id").where("brewery_id = ?", brewery_id).distinct
 
     # gather the ids of brewery beers in order to find the ratings
     brewery_specific_beer_ids = []
