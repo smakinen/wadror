@@ -41,12 +41,12 @@ class User < ActiveRecord::Base
 
     # get average for each rated style
     user_beer_styles.each do |style|
-      style_score_averages[style] = style_average(style)
+      style_score_averages[style] = style_average(style.id)
     end
 
     # find which rated style has the highest average
     highest_rated_style = style_score_averages.max_by {|beer_style, score_average| score_average}
-    highest_rated_style.first #name
+    highest_rated_style.first.name #name
 
   end
 
@@ -73,7 +73,7 @@ class User < ActiveRecord::Base
 
   # the style names of the beers the user has sampled and rated
   def rated_styles
-    beers.group(:style).count.keys
+    beers.map{|b| b.style}.uniq
   end
 
   def rated_breweries
@@ -81,13 +81,10 @@ class User < ActiveRecord::Base
   end
 
   # the average score of a given style in the user's ratings
-  def style_average(style)
+  def style_average(style_id)
 
     # find out the which of the user's rated beers belong to a style
-    style_specific_beers = beers.select("beers.id").where("style = ?", style).distinct
-
-    # postgres
-    # style_specific_beers = beers.group(:beer_id).select(:beer_id).where("style = ?", style)
+    style_specific_beers = beers.select("beers.id").where("style_id = ?", style_id).distinct
 
     # gather the ids of those beers in order to find the ratings
     style_specific_beer_ids = []
