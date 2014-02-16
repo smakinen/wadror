@@ -1,0 +1,8 @@
+<h1><%=@place.name %></h1>
+
+<div id="place-details">
+    <p><%= @place.street %></p>
+    <p><%= "#{@place.zip} #{@place.city.upcase}" %>
+    <p><iframe src="<%=@place.blogmap%>"></iframe></p>
+</div>
+

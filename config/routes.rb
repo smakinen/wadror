@@ -1,27 +1,28 @@
 Ratebeer::Application.routes.draw do
-  resources :memberships
-
-  resources :beer_clubs
-
-  resources :users
-  resources :sessions, only: [:new, :create]
-
-  resources :beers
-  resources :breweries
 
   root 'breweries#index'
 
-  get 'kaikki_bisset', to: 'beers#index'
+  # breweries, beers and clubs
+  resources :breweries
+  resources :beers
+  resources :beer_clubs
 
+  # users and ratings
+  resources :users
+  resources :memberships
   resources :ratings, only: [:index, :new, :create, :destroy]
 
+  resources :sessions, only: [:new, :create]
+
+  # sign-up and sign-in
   get 'signup', to: 'users#new'
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
 
+  # routes to beer places
+  resources :places, only: [:index, :show]
   get 'places', to: 'places#index'
   post 'places', to: 'places#search'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
