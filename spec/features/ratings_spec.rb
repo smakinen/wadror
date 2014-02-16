@@ -73,20 +73,24 @@ describe "Rating" do
 
   it "affects the preferred beer style on the user's page" do
     brewdog_brewery = FactoryGirl.create(:brewery_brewdog)
-    another_beer = FactoryGirl.create(:beer, name:"5am Saint", style:"Pale Ale", brewery:brewdog_brewery)
+
+    pale_ale_style = FactoryGirl.create(:style, name:"Pale Ale")
+    another_beer = FactoryGirl.create(:beer, name:"5am Saint", style:pale_ale_style, brewery:brewdog_brewery)
 
     rating1 = FactoryGirl.create(:rating, score:25, beer:beer1, user:user)
     rating2 = FactoryGirl.create(:rating, score:30, beer:another_beer, user:user)
 
     visit user_path(user)
 
-    expect(page).to have_content("#{another_beer.style} tastes and feels the best at the moment")
+    expect(page).to have_content("#{another_beer.style.name} tastes and feels the best at the moment")
 
   end
 
   it "affects the preferred brewery on the user's page" do
     brewdog_brewery = FactoryGirl.create(:brewery_brewdog)
-    another_beer = FactoryGirl.create(:beer, name:"5am Saint", style:"Pale Ale", brewery:brewdog_brewery)
+
+    pale_ale_style = FactoryGirl.create(:style, name:"Pale Ale")
+    another_beer = FactoryGirl.create(:beer, name:"5am Saint", style:pale_ale_style, brewery:brewdog_brewery)
 
     rating1 = FactoryGirl.create(:rating, score:25, beer:beer1, user:user)
     rating2 = FactoryGirl.create(:rating, score:30, beer:another_beer, user:user)
