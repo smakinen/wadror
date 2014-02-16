@@ -14,7 +14,7 @@
         </div>
     <% end %>
 
-    <%= form.select :beer_id, options_from_collection_for_select(@beers, :id, :to_s) %>
+    <%= form.select :beer_id, options_from_collection_for_select(@beers, :id, :to_s, selected: @rating.beer_id) %>
     Score: <%= form.number_field :score %>
     <%= form.submit %>
 

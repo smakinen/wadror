@@ -20,7 +20,7 @@
       <% @places.each do |place| %>
         <tr>
           <% Place.rendered_fields.each do |place_attribute| %>
-            <% if place_attribute == :name %>
+            <% if place_attribute == :name and not place.id.nil?%>
                 <td><%= link_to place.send(place_attribute), place_path(place.id) %></td>
             <%else %>
               <td><%= place.send(place_attribute) %></td>
