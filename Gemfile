@@ -41,6 +41,8 @@ gem 'httparty'
 
 gem 'rails-settings-cached', '0.3.1'
 
+gem 'jquery-turbolinks'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
