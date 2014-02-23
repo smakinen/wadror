@@ -9,11 +9,19 @@ class Brewery < ActiveRecord::Base
                                   greater_than_or_equal_to: 1042}
   validate :established_year_cannot_be_in_the_future
 
+  scope :active, -> {where active:true}
+  scope :retired, -> {where active:[nil, false]}
+
   def print_report
     puts name
     puts "established at #{self.year}"
     puts "number of beers #{self.beers.count}"
     puts "number of ratings #{self.ratings.count}"
+  end
+
+  def self.top(n)
+    sorted_by_rating_in_desc_order = Brewery.all.sort_by{|b| -(b.average_rating||0)}
+    sorted_by_rating_in_desc_order[0..n-1] unless sorted_by_rating_in_desc_order.empty?
   end
 
   # custom validation for the brewery establishment year

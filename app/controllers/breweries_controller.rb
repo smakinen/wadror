@@ -6,6 +6,11 @@ class BreweriesController < ApplicationController
   # GET /breweries
   # GET /breweries.json
   def index
+
+    @active_breweries = Brewery.active
+    @retired_breweries = Brewery.retired
+
+=begin
     @breweries = Brewery.all
 
     order = params[:order] || 'name'
@@ -14,6 +19,7 @@ class BreweriesController < ApplicationController
       when 'name' then @breweries.sort_by!{|brewery| brewery.name}
       when 'year' then @breweries.sort_by!{|brewery| brewery.year}
     end
+=end
 
   end
 
@@ -82,6 +88,6 @@ class BreweriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def brewery_params
-    params.require(:brewery).permit(:name, :year)
+    params.require(:brewery).permit(:name, :year, :active)
   end
 end

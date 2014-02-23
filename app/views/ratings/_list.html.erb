@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Average</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% top_rated.each do |rated| %>
+      <tr>
+        <td><%= link_to "#{rated.name}", rated %></td>
+        <td><%= rated.average_rating %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

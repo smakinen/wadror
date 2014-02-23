@@ -13,30 +13,18 @@
 
 <div class="form-group">
   <div class="field">
-    <div class="row">
-      <div class="col-xs-3">
-        <%= f.label :name %>
-      </div>
+        <div class="row">
+          <div class="col-xs-3">
+            <%= f.label :name %>
+            <%= f.text_field :name, class:'form-control'%>
+          </div>
+        </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-3">
-        <%= f.text_field :name, class:'form-control'%>
-      </div>
-    </div>
-
-  </div>
-  <div class="field">
+   <div class="field">
     <div class="row">
       <div class="col-xs-3">
         <%= f.label :style_id %>
-      </div>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="row">
-      <div class="col-xs-3">
         <%= f.select :style_id, options_from_collection_for_select(@styles, :id, :name, selected: @beer.style_id), class:'form-control' %>
       </div>
     </div>
@@ -46,13 +34,6 @@
     <div class="row">
       <div class="col-xs-3">
         <%= f.label :brewery_id %>
-      </div>
-    </div>
-   </div>
-
-  <div class="field">
-    <div class="row">
-      <div class="col-xs-3">
         <%= f.select :brewery_id, options_from_collection_for_select(@breweries, :id, :name, selected: @beer.brewery_id), class:'form-control' %>
       </div>
     </div>
