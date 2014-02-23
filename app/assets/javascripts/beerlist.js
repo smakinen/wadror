@@ -17,8 +17,6 @@ BEERS.show = function() {
 
 BEERS.sort_by_name = function() {
     BEERS.list.sort(function (a,b) {
-            console(a)
-            console(b)
            return a.name.toUpperCase().localeCompare(b.name.toUpperCase());
         });
 }
