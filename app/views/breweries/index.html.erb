@@ -1,6 +1,6 @@
 <h1>Listing breweries</h1>
 
-<table>
+<table class="table ">
   <thead>
   <tr>
     <th> <%= link_to 'Name', breweries_path(order:"name") %></th>
@@ -14,7 +14,7 @@
   <tbody>
   <% @breweries.each do |brewery| %>
       <tr>
-        <td><h2><%= link_to "#{brewery.name}", brewery %></h2></td>
+        <td><%= link_to "#{brewery.name}", brewery %></td>
         <td><i>Established in <%= brewery.year %></i></td>
         <td align="center"><%= brewery.beers.count %></td>
         <td><%= link_to 'Edit', edit_brewery_path(brewery) %></td>

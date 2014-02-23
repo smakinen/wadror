@@ -3,18 +3,27 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_tag sessions_path do %>
-    <div class="field">
-      <%= label_tag :username, "Username" %>
-      <%= text_field_tag :username, params[:username] %>
+
+    <div class="row">
+    <div class="col-xs-4">
+      <div class="field">
+        <%= label_tag :username, "Username" %>
+        <%= text_field_tag :username, params[:username], class:'form-control' %>
+      </div>
+        </div>
     </div>
 
-    <div class="field">
-      <%= label_tag :password, "Password" %>
-      <%= password_field_tag :password, params[:password] %>
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="field">
+          <%= label_tag :password, "Password" %>
+          <%= password_field_tag :password, params[:password], class:'form-control' %>
+        </div>
+      </div>
     </div>
 
     <div class="submit">
-      <%= submit_tag "Log in" %>
+      <%= submit_tag "Log in", class:'btn btn-primary' %>
     </div>
 
 <% end %>

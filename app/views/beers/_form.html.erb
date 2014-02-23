@@ -11,22 +11,56 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <br>
-      <%= f.text_field :name %>
+<div class="form-group">
+  <div class="field">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= f.label :name %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :style_id %>
-      <br>
-           <%= f.select :style_id, options_from_collection_for_select(@styles, :id, :name, selected: @beer.style_id) %>
+
+    <div class="row">
+      <div class="col-xs-3">
+        <%= f.text_field :name, class:'form-control'%>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :brewery_id %>
-      <br>
-      <%= f.select :brewery_id, options_from_collection_for_select(@breweries, :id, :name, selected: @beer.brewery_id) %>
+
+  </div>
+  <div class="field">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= f.label :style_id %>
+      </div>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+  </div>
+
+  <div class="field">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= f.select :style_id, options_from_collection_for_select(@styles, :id, :name, selected: @beer.style_id), class:'form-control' %>
+      </div>
     </div>
+  </div>
+
+  <div class="field">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= f.label :brewery_id %>
+      </div>
+    </div>
+   </div>
+
+  <div class="field">
+    <div class="row">
+      <div class="col-xs-3">
+        <%= f.select :brewery_id, options_from_collection_for_select(@breweries, :id, :name, selected: @beer.brewery_id), class:'form-control' %>
+      </div>
+    </div>
+   </div>
+
+  <div class="actions">
+    <%= f.submit class:'btn btn-primary'%>
+  </div>
+</div>
+
 <% end %>

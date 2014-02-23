@@ -14,12 +14,32 @@
       of <%= @beer.average_rating %></p>
 <% end %>
 
-<%= form_for(@rating) do |f| %>
-    <%= f.hidden_field :beer_id %>
-    <%= f.label :score %>
-    <%= f.number_field :score%>
-    <%= f.submit %>
-<% end %>
+<div class="form-group">
+  <%= form_for(@rating) do |f| %>
+      <%= f.hidden_field :beer_id %>
 
-<%= link_to 'Edit', edit_beer_path(@beer) %> |
+      <div class="row">
+        <div class="col-xs-3">
+          <%= f.label :score %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-3">
+          <%= f.number_field :score, class:'form-control'%>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-3">
+          <%= f.submit class:'btn btn-primary' %>
+        </div>
+      </div>
+  <% end %>
+
+
+</div>
+
+
+<%= link_to 'Edit', edit_beer_path(@beer), class:'btn btn-primary' %> |
 <%= link_to 'Back', beers_path %>

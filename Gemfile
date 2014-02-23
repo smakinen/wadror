@@ -16,6 +16,12 @@ end
 
 gem 'byebug', group: [:development, :test]
 
+gem 'bootstrap-sass'
+
+group :development do
+  gem 'rails_layout'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

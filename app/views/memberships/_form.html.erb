@@ -20,11 +20,11 @@
         <div class="field">
           <%= f.label "Select a beer club to join" %>
           <%= f.select :beer_club_id,
-                       options_from_collection_for_select(@beer_clubs, :id, :name) %>
+                       options_from_collection_for_select(@beer_clubs, :id, :name), class:"form-control" %>
         </div>
 
         <div class="actions">
-          <%= f.submit %>
+          <%= f.submit class:"btn btn-primary"%>
         </div>
 
 
